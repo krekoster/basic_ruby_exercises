@@ -1,0 +1,17 @@
+def substrings(phrase, dictionary)
+  words = phrase.split(' ')
+  result = {}
+  dictionary.each do |item|
+    counter = 0
+    words.each do |word|
+      if word.downcase.include?(item.downcase)
+        counter += 1
+      end
+      result[item]=counter
+    end
+  end
+  result
+end
+
+dictionary = %w[below down go going horn how howdy it i low own part partner sit]
+puts substrings("Howdy partner, sit down! How's it going?", dictionary)
